@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Hokage — CS2 Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<button id="steam-login">Войти через Steam</button>
 <script>
 if (sessionStorage.getItem("hokageIntro")) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -156,4 +156,12 @@ setInterval(createSakura, 350);
 
 </body>
 </html>
-<button id="steam-login">Войти через Steam</button>
+<script>
+// Имитация Steam Login через OpenID
+document.getElementById("steam-login").onclick = function() {
+    // Ссылка на Steam OpenID (редирект на ваш сайт после логина)
+    const returnTo = encodeURIComponent("https://логин.github.io/hokage/profile.html");
+    const steamLoginUrl = `https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnTo}&openid.realm=https://логин.github.io/hokage/&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select`;
+    window.location.href = steamLoginUrl;
+};
+</script>
