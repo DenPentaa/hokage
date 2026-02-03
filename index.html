@@ -156,12 +156,7 @@ setInterval(createSakura, 350);
 
 </body>
 </html>
-<script>
-// Имитация Steam Login через OpenID
-document.getElementById("steam-login").onclick = function() {
-    // Ссылка на Steam OpenID (редирект на ваш сайт после логина)
-    const returnTo = encodeURIComponent("https://логин.github.io/hokage/profile.html");
-    const steamLoginUrl = `https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&openid.mode=checkid_setup&openid.return_to=${returnTo}&openid.realm=https://логин.github.io/hokage/&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select`;
-    window.location.href = steamLoginUrl;
-};
-</script>
+<!-- Заменяем старую кнопку -->
+<a id="steam-login" href="https://store.steampowered.com/login/" target="_blank">
+  <button>Войти через Steam</button>
+</a>
