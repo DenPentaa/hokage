@@ -11,25 +11,25 @@
 <h1 id="username"></h1>
 <p>Рейтинг: <span id="rating">1500</span></p>
 
+<h2>Выберите режим:</h2>
+<div id="modes">
+  <button onclick="selectMode('AWP')">AWP</button>
+  <button onclick="selectMode('Соревновательный')">Соревновательный</button>
+  <button onclick="selectMode('DM')">Deathmatch</button>
+</div>
+
 <h2>Скины:</h2>
 <div id="skins">
-  <div class="skin">AK-47 | Redline</div>
-  <div class="skin">AWP | Dragon Lore</div>
-  <div class="skin">M4A4 | Howl</div>
+  <div class="skin" onclick="changeSkin(this)">AK-47 | Redline</div>
+  <div class="skin" onclick="changeSkin(this)">AWP | Dragon Lore</div>
+  <div class="skin" onclick="changeSkin(this)">M4A4 | Howl</div>
 </div>
+
+<h2>Статистика:</h2>
+<p id="stats">Выберите режим, чтобы увидеть статистику</p>
 
 <button onclick="logout()">Выйти</button>
 
-<script>
-const user = sessionStorage.getItem("hokageUser");
-if(!user) location.href = "index.html";
-else document.getElementById("username").innerText = "Привет, " + user;
-
-function logout() {
-  sessionStorage.removeItem("hokageUser");
-  location.href = "index.html";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
