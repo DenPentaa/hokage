@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Профиль — Hokage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1 id="username"></h1>
+<p>Рейтинг: <span id="rating">1500</span></p>
+
+<h2>Скины:</h2>
+<div id="skins">
+  <div class="skin">AK-47 | Redline</div>
+  <div class="skin">AWP | Dragon Lore</div>
+  <div class="skin">M4A4 | Howl</div>
+</div>
+
+<button onclick="logout()">Выйти</button>
+
+<script>
+const user = sessionStorage.getItem("hokageUser");
+if(!user) location.href = "index.html";
+else document.getElementById("username").innerText = "Привет, " + user;
+
+function logout() {
+  sessionStorage.removeItem("hokageUser");
+  location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
