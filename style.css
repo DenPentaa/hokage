@@ -1,0 +1,42 @@
+body { 
+  background:#020617; 
+  color:white; 
+  font-family:Arial; 
+  text-align:center; 
+  margin:0; 
+  overflow-x:hidden; 
+}
+
+button { 
+  background:#fb7185; 
+  color:white; 
+  padding:10px 20px; 
+  border:none; 
+  border-radius:8px; 
+  cursor:pointer; 
+  font-size:16px;
+  margin-top:20px;
+}
+
+.sakura { 
+  position:fixed; 
+  top:-10%; 
+  width:12px; 
+  height:12px; 
+  background:#fb7185; 
+  border-radius:50%; 
+  pointer-events:none; 
+  animation:fall linear infinite; 
+}
+
+@keyframes fall { 
+  to { transform:translateY(110vh) rotate(360deg); } 
+}
+
+.skin { 
+  border:1px solid #fb7185; 
+  padding:10px; 
+  margin:5px; 
+  border-radius:8px; 
+  display:inline-block; 
+}
